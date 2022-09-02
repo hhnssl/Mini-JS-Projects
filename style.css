@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --success-color: #2ecc71;
+  --error-color: #cc2e2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9fbfa;
+  font-family: 'Open Sans', sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 400px;
+
+  background-color: #fff;
+  border-radius: 5px;
+
+  box-shadow: 0 2px 19px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  margin-bottom: 5px;
+  display: block;
+  color: #777;
+}
+
+.form-control input {
+  padding: 10px;
+  display: block;
+  width: 100%;
+
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: var(--error-color);
+  visibility: hidden;
+}
+
+/* error 클래스명이 추가되면 visibility hidden로 숨겨놨던 에러메세지를 다시 띄우기  */
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  margin-top: 20px;
+  padding: 10px;
+  display: block;
+  width: 100%;
+
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+}
