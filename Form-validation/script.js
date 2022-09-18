@@ -3,6 +3,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const phoneNumber = document.getElementById('phone_number');
 
 // Show input error message
 function showError(input, message) {
@@ -26,7 +27,7 @@ function checkEmail(input) {
   if (regex.test(input.value.trim())) {
     showSuccess(input);
   } else {
-    showError(input, 'Email is not valid !');
+    showError(input, '이메일 형식이 바르지 않습니다.');
   }
 }
 
@@ -34,7 +35,8 @@ function checkEmail(input) {
 function checkRequired(inputArr) {
   inputArr.forEach(function (input) {
     if (input.value.trim() === '') {
-      showError(input, `${getFieldName(input)} is required`);
+      showError(input, '필수 정보입니다.');
+      // showError(input, `${getFieldName(input)} is required`);
     } else {
       showSuccess(input);
     }
@@ -44,15 +46,9 @@ function checkRequired(inputArr) {
 // Check input length
 function checkLength(input, min, max) {
   if (input.value.length < min) {
-    showError(
-      input,
-      `${getFieldName(input)} must be at least ${min} characters`
-    );
+    showError(input, `${min}글자 이상 입력하세요.`);
   } else if (input.value.length > max) {
-    showError(
-      input,
-      `${getFieldName(input)} must be less than ${max} characters`
-    );
+    showError(input, `${max}글자를 초과할 수 없습니다.`);
   } else {
     showSuccess(input);
   }
@@ -61,7 +57,7 @@ function checkLength(input, min, max) {
 // Check passwords match
 function checkPasswordsMatch(password1, password2) {
   if (password1.value !== password2.value) {
-    showError(password2, 'Password do not match');
+    showError(password2, '비밀번호가 일치하지 않습니다.');
   }
 }
 
@@ -74,7 +70,7 @@ function getFieldName(input) {
 form.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  checkRequired([username, email, password, password2]);
+  checkRequired([username, email, password, password2, phoneNumber]);
   checkLength(username, 3, 15);
   checkLength(password, 6, 25);
   checkEmail(email);

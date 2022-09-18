@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 :root {
   --success-color: #2ecc71;
@@ -11,7 +12,7 @@
 
 body {
   background-color: #f9fbfa;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 
   display: flex;
   align-items: center;
@@ -58,6 +59,9 @@ h2 {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   font-size: 14px;
+
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 .form-control input:focus {
@@ -98,4 +102,6 @@ h2 {
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+
 }

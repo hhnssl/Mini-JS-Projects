@@ -10,25 +10,25 @@
   <body>
     <div class="container">
       <form id="form" class="form">
-        <h2>Join Us!</h2>
+        <h2>회원 가입</h2>
         <div class="form-control">
-          <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter username" />
+          <label for="username">아이디</label>
+          <input type="text" id="username" placeholder="Enter ID" />
           <small>Error message</small>
         </div>
         <div class="form-control">
-          <label for="email">Email</label>
+          <label for="email">이메일</label>
           <!-- type="email"이라는 속성이 있지만 여기서 안쓰겠음! -->
           <input type="text" id="email" placeholder="Enter email" />
           <small>Error message</small>
         </div>
         <div class="form-control">
-          <label for="password">Password</label>
+          <label for="password">비밀번호</label>
           <input type="password" id="password" placeholder="Enter password" />
           <small>Error message</small>
         </div>
         <div class="form-control">
-          <label for="password2">Confirm Password</label>
+          <label for="password2">비밀번호 재확인</label>
           <input
             type="password"
             id="password2"
@@ -36,8 +36,17 @@
           />
           <small>Error message</small>
         </div>
+        <div class="form-control">
+          <label for="phone_number">휴대폰 번호</label>
+          <input
+            type="tel"
+            id="phone_number"
+            placeholder="Enter phone number"
+          />
+          <small>Error message</small>
+        </div>
 
-        <button>Submit</button>
+        <button>등록</button>
       </form>
     </div>
     <script src="./script.js"></script>
