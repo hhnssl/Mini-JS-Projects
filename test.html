@@ -5,31 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body {
-        /* font-size: 25px; */
-      }
-
-      .one {
-        font-size: 5em;
-      }
-
-      .two {
-        font-size: 2em;
-      }
-
-      .three {
-        font-size: 2rem;
-      }
-    </style>
   </head>
   <body>
-    <div class="one">
-      font size
-      <div class="two">
-        font size
-        <div class="three">font size</div>
-      </div>
-    </div>
+    <script>
+      const DATE = '20220918';
+      const API_KEY = 'e9c5625550c7c8e7642a9ec28cbe2197';
+      const API_URL =
+        'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json' +
+        '?key=' +
+        API_KEY +
+        '&targetDt=' +
+        DATE;
+
+      // let promise = fetch(API_URL);
+
+      console.log(API_URL);
+    </script>
   </body>
 </html>
