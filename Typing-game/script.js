@@ -37,6 +37,18 @@ let randomWord;
 let score = 0;
 let time = 10;
 
+// 난이도 변수: 로컬스토리지에 저장된 값이 있으면 그걸 저장하고 없으면 미디엄을 디폴트로 사용
+let difficulty =
+  localStorage.getItem('difficulty') !== null
+    ? localStorage.getItem('difficulty')
+    : 'medium';
+
+// 셀렉트박스에 따로 난이도 변수를 넣어줘야함
+difficultySelect.value =
+  localStorage.getItem('difficulty') !== null
+    ? localStorage.getItem('difficulty')
+    : 'medium';
+
 // 페이지가 로드되면 인풋창에 자동 포커스
 text.focus();
 
@@ -90,6 +102,7 @@ function gameOver() {
 
 addWordToDOM();
 
+// 타이핑
 text.addEventListener('input', (e) => {
   const insertedText = e.target.value;
   // console.log(insertedText);
@@ -105,8 +118,25 @@ text.addEventListener('input', (e) => {
     // input창 비우기
     e.target.value = '';
 
-    // 맞출 때마다 2초 추가
-    time += 2;
+    // 난이도 모드에 따라, 맞출 때마다 x초씩 추가하기
+    if (difficulty === 'hard') time += 2;
+    if (difficulty === 'medium') time += 3;
+    if (difficulty === 'easy') time += 4;
     updateTime();
   }
+});
+
+// 설정 버튼 토글
+settingsBtn.addEventListener('click', (e) => {
+  settings.classList.toggle('hide');
+});
+
+// 난이도 선택
+settingsForm.addEventListener('change', (e) => {
+  // 선택한 셀렉트박스 값을 변수에 담기
+  difficulty = e.target.value;
+
+  // console.log(difficulty);
+  // 로컬스토리지에 해당하는 난이도 저장하기
+  localStorage.setItem('difficulty', difficulty);
 });
